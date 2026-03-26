@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Website Usage Control",
+  "version": "1.0",
+  "description": "Track website usage and control distracting sites",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "ui/popup.html"
+  }
+}
