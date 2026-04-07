@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FocusTime Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="main-logo-icon"></div>
+            <div class="nav-links">
+                <button class="nav-item active" data-tab="dashboard">⊞</button>
+                <button class="nav-item" data-tab="daily">🕒</button>
+                <button class="nav-item" data-tab="analytics">📊</button>
+                <button class="nav-item" data-tab="limits">⚙</button>
+            </div>
+        </nav>
+
+        <main class="content">
+            <header class="top-nav">
+                <div class="brand"><h1>FocusTime</h1></div>
+                <div class="menu-tabs">
+                    <span class="tab-link active" data-tab="dashboard">Dashboard</span>
+                    <span class="tab-link" data-tab="daily">Daily</span>
+                    <span class="tab-link" data-tab="analytics">Analytics</span>
+                    <span class="tab-link" data-tab="limits">Limits</span>
+                </div>
+            </header>
+
+            <section id="dashboard" class="tab-content active">
+                <div class="stat-grid">
+                    <div class="card"><p class="card-label">Today's Total</p><h2 class="card-value">3h 24m</h2></div>
+                    <div class="card"><p class="card-label">Websites Visited</p><h2 class="card-value">12</h2></div>
+                    <div class="card"><p class="card-label">Most Productive</p><h2 class="card-value">Morning</h2></div>
+                </div>
+                <div class="status-bar card">
+                    <span class="status-left">Currently Active: <strong>github.com</strong></span>
+                    <span class="status-right">12:34</span>
+                </div>
+                <div class="card main-card">
+                    <h3 class="section-title">Top Websites Today</h3>
+                    <div class="site-list">
+                        <div class="site-item">
+                            <span class="site-name"><span class="icon-sq bg-blue">G</span> github.com</span>
+                            <span class="site-time">1h 24m</span>
+                        </div>
+                        <div class="site-item">
+                            <span class="site-name"><span class="icon-sq bg-red">Y</span> youtube.com</span>
+                            <span class="site-time">58m</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="daily" class="tab-content">
+                <div class="date-header card">
+                    <button class="nav-arrow">&lt;</button>
+                    <div class="date-info">
+                        <h3 class="day-text">Tuesday</h3>
+                        <p class="date-sub">January 20, 2026</p>
+                    </div>
+                    <button class="nav-arrow">&gt;</button>
+                </div>
+                <div class="hero-stats card">
+                    <p class="hero-label">Total Time Today</p>
+                    <h1 class="hero-value">3h 24m</h1>
+                    <p class="hero-sub">Across 7 websites</p>
+                </div>
+                <div class="card main-card">
+                    <h3 class="section-title">Time Breakdown</h3>
+                    <div class="breakdown-list">
+                        <div class="breakdown-row">
+                            <span class="rank">1</span>
+                            <div class="icon-sq bg-blue">G</div>
+                            <div class="site-meta"><strong>github.com</strong><span>41% of total time</span></div>
+                            <div class="progress-box"><div class="bar bg-blue" style="width: 41%"></div></div>
+                            <span class="row-time">1h 24m</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="analytics" class="tab-content">
+                <div class="stat-grid">
+                    <div class="card"><h3>Total This Week</h3><p class="big-text">23h</p></div>
+                    <div class="card"><h3>Daily Avg</h3><p class="big-text">3h 18m</p></div>
+                </div>
+                <div class="card">
+                    <h3>Weekly Activity</h3>
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </section>
+
+            <section id="limits" class="tab-content">
+                <div class="card limit-header">
+                    <h2>Website Time Limits</h2>
+                    <p>Improve your productivity by setting limits</p>
+                </div>
+                <div class="info-blue card">💡 When limit is reached, tab will auto close</div>
+                <div class="card limit-row">
+                    <input type="text" value="twitter.com">
+                    <input type="number" value="45">
+                    <select><option>Auto Close Tab</option></select>
+                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                </div>
+                <button class="add-btn">+ Add New Website Limit</button>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
